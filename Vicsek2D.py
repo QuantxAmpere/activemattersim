@@ -43,6 +43,7 @@ class Vicsek2D:
             ax.axis(axrange)
             ax.set_aspect('equal', 'box')
             fig.canvas.draw()
+            plt.pause(0.001) # pause to let matplotlib catch up with drawing
             self.update()
 
     def update(self):
@@ -106,3 +107,4 @@ v2d = Vicsek2D(N, eta)
 print("Box size =", v2d.L)
 print("Particle density =", v2d.rho)
 v2d.main()
+input("Press Enter to exit...")
