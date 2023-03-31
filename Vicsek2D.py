@@ -1,3 +1,5 @@
+#! python
+
 # Following code implements the Vicsek model in 2D from PRL 75 1226 (1995)
 # For possible use in AM 115
 
@@ -24,7 +26,7 @@ class Vicsek2D:
         self.vel[:, 0] = self.v * np.cos(self.theta)  # velocity along x
         self.vel[:, 1] = self.v * np.sin(self.theta)  # velocity along y
         self.tt = 200  # total number of time steps
-        self.rparts = np.eye(N, dtype=np.bool)  # matrix representing particles within distance r
+        self.rparts = np.eye(N, dtype=bool)  # matrix representing particles within distance r
 
     def main(self):
         # Setup plots
@@ -76,7 +78,7 @@ class Vicsek2D:
     def find_particles(self):
 
         # Reset rparts matrix
-        self.rparts = np.eye(self.N, dtype=np.bool)
+        self.rparts = np.eye(self.N, dtype=bool)
 
         for i in range(N):
             for j in range(i + 1, N):
